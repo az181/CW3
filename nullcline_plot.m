@@ -3,8 +3,8 @@ y = x + 1;
 a = -1.5:1.5;
 b = 4 - 8*a;
 hold on
-plot(x,y)
-plot(a,b)
+plot(x,y, 'r')
+plot(a,b, 'b')
 xline(0, 'b')
 yline(0,'r')
 grid on
