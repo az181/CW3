@@ -1,4 +1,4 @@
-function ODE
+function manifolds
 t0 = 0;
 tfinal = 10;
 xy0 = [0.00001;3.99999];
