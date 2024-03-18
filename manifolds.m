@@ -1,3 +1,5 @@
+% https://uk.mathworks.com/help/matlab/math/solve-system-of-odes-with-multiple-initial-conditions.html
+
 
 dxdt = @(x,y) x .* (-1 - x + y);
 dydt = @(x,y) y .* (4 - y - 8 * x);
