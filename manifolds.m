@@ -1,9 +1,10 @@
-function manifolds
-t0 = 0;
-tfinal = 10;
-xy0 = [0.00001;3.99999];
 
-[t, xy] = ode23(@my0DE, [t0 ; tfinal], xy0);
+dxdt = @(x,y) x .* (-1 - x + y);
+dydt = @(x,y) y .* (4 - y - 8 * x);
+
+[t, xy] = ode23(@(t, xy) [dxdt(xy(1), xy(2)); dydt(xy(1), xy(2))], ...
+    [0 50], [0.0001;3.9999]);
+
 plot(xy(:,1), xy(:,2))
 hold on
 plot(0, 4, '.', 'LineWidth', 10, 'MarkerSize', 20)
@@ -14,13 +15,4 @@ ylabel('Wye-bait Population')
 legend('Unstable Manifold', 'Saddle Point')
 
 
-
-end
-
-
-function dt = my0DE(t, xy)
-dt = [1;3];
-dt(1) =  xy(1) .* (-1 - xy(1) + xy(2));
-dt(2) =  xy(2) .* (4 - xy(2) - 8 * xy(1));
-end
 
