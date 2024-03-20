@@ -30,6 +30,8 @@ for x_i = 0:h:2
         clear x y;
     end
 end
-
+title("Sustainable fishing plot.")
+xlabel('Exe-halibuts Population')
+ylabel('Wye-bait Population')
 hold off;
 
